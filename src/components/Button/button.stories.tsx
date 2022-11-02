@@ -1,41 +1,30 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import Button, { ButtonType, ButtonSize } from './button'
+import '../../styles/index.scss'
 
-import button from './button'
+const defaultButton = () => <Button onClick={action('clicked')}>Default button</Button>
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: 'Example/Button',
-  component: button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof button>
+const buttonWithSize = () => (
+  <>
+    <Button size={ButtonSize.Large}>Large button</Button>
+    <Button size={ButtonSize.Small}>Small button</Button>
+  </>
+)
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof button> = (args) => <button {...args} />
+const buttonWithType = () => (
+  <>
+    <Button btnType={ButtonType.Primary}>Primary button</Button>
+    <Button btnType={ButtonType.Default}>Default Button</Button>
+    <Button btnType={ButtonType.Danger}>Danger button</Button>
+    <Button btnType={ButtonType.Link} href="https://google.com">
+      Link button
+    </Button>
+  </>
+)
 
-export const Primary = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
-}
-
-export const Secondary = Template.bind({})
-Secondary.args = {
-  label: 'Button',
-}
-
-export const Large = Template.bind({})
-Large.args = {
-  size: 'large',
-  label: 'Button',
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  size: 'small',
-  label: 'Button',
-}
+storiesOf('Button Component', module)
+  .add('Button', defaultButton)
+  .add('不同尺寸的 Button', buttonWithSize)
+  .add('不同类型的 Button', buttonWithType)
