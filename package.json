@@ -3,6 +3,12 @@
     "private": false,
     "version": "0.1.0",
     "type": "module",
+    "description": "一个轻量级 React 组件库",
+    "homepage": "https://github.com/make3waves/makaka",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/make3waves/makaka"
+    },
     "scripts": {
         "dev": "vite",
         "build": "npm run clean && vite build && npm run build-css",
@@ -25,10 +31,19 @@
             "require": "./lib/makaka.umd.js"
         }
     },
+    "keywords": [
+        "makaka",
+        "vite",
+        "react",
+        "react component"
+    ],
+    "author": "makaka",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.2.0",
-        "@fortawesome/free-solid-svg-icons": "^6.2.0",
-        "@fortawesome/react-fontawesome": "^0.2.0",
         "makaka": "^0.1.0"
     },
     "peerDependencies": {
