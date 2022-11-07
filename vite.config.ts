@@ -34,7 +34,8 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 8000,
+    port: 3000,
+    open: true,
   },
   build: {
     // 打包输出的目录
