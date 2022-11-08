@@ -11,9 +11,10 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "npm run clean && vite build && npm run build-css",
+        "build": "npm run clean && vite build && npm run build-css && npm run copy-readme",
         "preview": "vite preview",
         "build-css": "sass ./src/styles/index.scss ./lib/index.css",
+        "copy-readme": "cp ./README.md ./lib/README.md",
         "clean": "rimraf ./lib",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
@@ -75,6 +76,7 @@
         "react-dom": "^18.2.0",
         "rimraf": "^3.0.2",
         "sass": "^1.55.0",
+        "tslib": "^2.4.1",
         "typescript": "^4.6.4",
         "vite": "^3.2.0"
     }

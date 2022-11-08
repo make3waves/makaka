@@ -1,5 +1,0 @@
-declare module 'react'
-declare module 'react-dom'
-declare module 'classnames'
-declare module 'jest'
-declare module 'node'
