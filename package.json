@@ -1,7 +1,7 @@
 {
     "name": "makaka",
     "private": false,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "type": "module",
     "description": "一个轻量级 React 组件库",
     "homepage": "https://github.com/make3waves/makaka",
