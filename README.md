@@ -46,6 +46,8 @@ npm run dev
 npm run build
 ```
 
+发布 NPM 包通过 Github Actions 自动发布，合并到 main 分支即会自动发包
+
 ### 参考
 
 [nutui-react](https://nutui.jd.com/react/#/zh-CN/guide/start-react)
