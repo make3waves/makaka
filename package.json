@@ -1,0 +1,83 @@
+{
+    "name": "makaka",
+    "private": false,
+    "version": "0.1.0",
+    "type": "module",
+    "description": "一个轻量级 React 组件库",
+    "homepage": "https://github.com/make3waves/makaka",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/make3waves/makaka"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "npm run clean && vite build && npm run build-css && npm run copy-readme",
+        "preview": "vite preview",
+        "build-css": "sass ./src/styles/index.scss ./lib/index.css",
+        "copy-readme": "cp ./README.md ./lib/README.md",
+        "clean": "rimraf ./lib",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    },
+    "files": [
+        "lib"
+    ],
+    "main": "./lib/makaka.umd.js",
+    "module": "./lib/makaka.es.js",
+    "typings": "./lib/index.d.ts",
+    "exports": {
+        "./lib/style.css": "./lib/index.css",
+        ".": {
+            "import": "./lib/makaka.es.js",
+            "require": "./lib/makaka.umd.js"
+        }
+    },
+    "keywords": [
+        "makaka",
+        "vite",
+        "react",
+        "react component"
+    ],
+    "author": "makaka",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "dependencies": {
+        "makaka": "^0.1.0"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.19.6",
+        "@rollup/plugin-typescript": "^9.0.2",
+        "@storybook/addon-actions": "^6.5.13",
+        "@storybook/addon-essentials": "^6.5.13",
+        "@storybook/addon-interactions": "^6.5.13",
+        "@storybook/addon-links": "^6.5.13",
+        "@storybook/builder-vite": "^0.2.5",
+        "@storybook/react": "^6.5.13",
+        "@storybook/testing-library": "^0.0.13",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^14.4.3",
+        "@types/classnames": "^2.3.1",
+        "@types/jest": "^29.2.1",
+        "@types/node": "^18.11.9",
+        "@types/react": "^18.0.22",
+        "@types/react-dom": "^18.0.7",
+        "@vitejs/plugin-react": "^2.2.0",
+        "babel-loader": "^8.2.5",
+        "classnames": "^2.3.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "rimraf": "^3.0.2",
+        "sass": "^1.55.0",
+        "tslib": "^2.4.1",
+        "typescript": "^4.6.4",
+        "vite": "^3.2.0"
+    }
+}

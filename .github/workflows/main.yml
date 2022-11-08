@@ -1,0 +1,46 @@
+name: Publish Package to npmjs
+
+on:
+  # 当对分支main进行push操作的时候，这个工作流就被触发了
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    permissions:
+      contents: write # to create release (yyx990803/release-tag)
+
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # 到这如果全部成功，那么我们就成功的将代码发布到了npm
+
+      # 下面主要是创建 github 的release
+      # 使用 tyankatsu0105/read-package-version-actions@v1 工具来读取对应的package.json 数据
+      - name: Read package.json
+        id: package-version
+        uses: tyankatsu0105/read-package-version-actions@v1
+
+        # 关于创建 release 的更多参数，可以查看 actions/create-release@v1
+      - name: Create Release for Tag
+        id: release-tag
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }} # 这块需要用到 github的token，因为需要对分之进行代码推送
+        with:
+          tag_name: v${{ steps.package-version.outputs.version }}
+          release_name: v${{ steps.package-version.outputs.version }}
+          prerelease: false # 是否为预发布版本
+          body: |
+            Please refer to [CHANGELOG.md](https://github.com/make3waves/makaka/CHANGELOG.md) for details.
