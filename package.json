@@ -11,7 +11,7 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "npm run test && npm run clean && vite build && npm run build-css && npm run copy-readme",
+        "build": "npm run clean && vite build && npm run build-css && npm run copy-readme",
         "preview": "vite preview",
         "build-css": "sass ./src/styles/index.scss ./lib/index.css",
         "copy-readme": "cp ./README.md ./lib/README.md",
