@@ -1,5 +1,4 @@
 {
-    "branch": "main",
     "plugins": [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
@@ -12,7 +11,7 @@
                     "package.json",
                     "CHANGELOG.md"
                 ],
-                "message": "release: v${nextRelease.version} \n\n${nextRelease.notes}"
+                "message": "release: v${nextRelease.version} [skip ci] \n\n${nextRelease.notes}"
             }
         ],
         "@semantic-release/github"
