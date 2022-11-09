@@ -7,6 +7,7 @@ const App: React.FC = () => {
     <Button
       btnType={ButtonType.Primary}
       size={ButtonSize.Large}
+      round
       onClick={(e) => {
         alert('本地包 测试 success!')
       }}

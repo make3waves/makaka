@@ -17,6 +17,10 @@ const disabledProps: ButtonProps = {
   onClick: jest.fn(),
 }
 
+const roundProps: ButtonProps = {
+  round: true,
+}
+
 describe('test button components', () => {
   it('should render default button', () => {
     const wrapper = render(<Button {...defaultProps}>Click</Button>)
@@ -52,5 +56,11 @@ describe('test button components', () => {
     expect(element.disabled).toBeTruthy()
     fireEvent.click(element)
     expect(disabledProps.onClick).not.toHaveBeenCalled()
+  })
+  it('should render round button when round set to true', () => {
+    const wrapper = render(<Button {...roundProps}>Click</Button>)
+    const element = wrapper.getByText('Click') as HTMLButtonElement
+    expect(element).toBeInTheDocument()
+    expect(element).toHaveClass('btn-round')
   })
 })

@@ -19,6 +19,7 @@ const App: React.FC = () => {
         <Button
           btnType="primary"
           size="lg"
+          round
           onClick={(e) => {
             alert('线上包 测试 success!')
           }}
