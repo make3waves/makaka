@@ -16,6 +16,7 @@ export enum ButtonType {
 interface BaseButtonProps {
   className?: string
   disabled?: boolean
+  round?: boolean
   size?: ButtonSize
   btnType?: ButtonType
   children: React.ReactNode
@@ -27,13 +28,14 @@ type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElemen
 export type ButtonProps = Partial<NetiveButtonProps & AnchorButtonProps>
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { btnType, className, disabled, size, children, href, ...restProps } = props
+  const { btnType, className, disabled, round, size, children, href, ...restProps } = props
 
   // btn,btn-lg,btn-primary
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
     disabled: btnType === ButtonType.Link && disabled,
+    'btn-round': round,
   })
 
   if (btnType === ButtonType.Link && href) {
@@ -54,6 +56,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 Button.defaultProps = {
   disabled: false,
   btnType: ButtonType.Default,
+  round: false,
 }
 
 export default Button
