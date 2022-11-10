@@ -16,6 +16,8 @@
         "build-css": "sass ./src/styles/index.scss ./lib/index.css",
         "copy-readme": "cp ./README.md ./lib/README.md",
         "clean": "rimraf ./lib",
+        "test": "react-scripts test --watchAll",
+        "eject": "react-scripts eject",
         "release": "npm run semantic-release",
         "release:beta": "standard-version --release-as major --prerelease beta",
         "release:major": "standard-version --release-as major",
