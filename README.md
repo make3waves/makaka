@@ -2,6 +2,15 @@
 
 轻量级 React 组件库
 
+<p align="left">
+  <a href="https://www.npmjs.com/package/makaka">
+    <img src="https://img.shields.io/npm/v/makaka?label=npm" />
+  </a>
+  <a href="https://github.com/make3waves/makaka/actions/workflows/release.yml">
+    <img src="https://github.com/make3waves/makaka/actions/workflows/release.yml/badge.svg" />
+  </a>
+</p>
+
 ### 使用
 
 #### NPM 安装
