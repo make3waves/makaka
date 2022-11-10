@@ -1,8 +1,10 @@
-# makaka
+<h1 align="center">makaka</h1>
 
-轻量级 React 组件库
+<p align="center">
+  轻量级 React 组件库
+</p>
 
-<p align="left">
+<p align="center">
   <a href="https://www.npmjs.com/package/makaka">
     <img src="https://img.shields.io/npm/v/makaka?label=npm" />
   </a>
