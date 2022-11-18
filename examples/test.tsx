@@ -1,5 +1,5 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
 import { Button } from 'makaka'
 import 'makaka/lib/style.css'
 
@@ -31,7 +31,7 @@ const App: React.FC = () => {
   )
 }
 
-createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

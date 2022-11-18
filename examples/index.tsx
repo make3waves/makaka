@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 // 这里是重点！！！
 // App为库的入口，模拟外部引入
 import App from '../src/App'
@@ -11,7 +11,7 @@ const containerStyle: React.CSSProperties = {
   transform: 'translate(-50%, -50%)',
 }
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div style={containerStyle}>
       <a href="./examples/test.html">跳转到线上包预览页面</a>
@@ -21,5 +21,4 @@ ReactDOM.render(
       </div>
     </div>
   </React.StrictMode>,
-  document.getElementById('root'),
 )
