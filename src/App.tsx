@@ -1,5 +1,6 @@
 import React from 'react'
 import Button, { ButtonType, ButtonSize } from './components/Button/button'
+import Toast from './components/Toast/toast'
 import './styles/index.scss'
 
 const App: React.FC = () => {
@@ -16,5 +17,7 @@ const App: React.FC = () => {
     </Button>
   )
 }
+
+Toast('你好，我是一个命令式组件，我通过调用命令生成一个DOM节点。')
 
 export default App
